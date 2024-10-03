@@ -4,47 +4,50 @@
     <meta charset="UTF-8">
     <!-- css bootstrap -->
     <link rel="stylesheet" href="src/css/bootstrap.css">
+
     <!-- css font awesome -->
     <!-- https://fontawesome.com/v6/icons -->
     <link href="src/css/font-awesome/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css fim -->
+    <link rel="stylesheet" href="src/css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body class="data-bs-theme : light">
-    <header class="myHeader">
+<body data-bs-theme="light">
+    <header class="container-fluid position-fixed top-0">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                
-                <img src="src/img/logo/logoWhite.svg" alt="">
-
+                <img id="imgLogo" src="src/img/logo/logoDark.svg" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Adoção</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#adocao">Adoção</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#galeria">Galeria</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contatos</a></li>
                     </ul>
                     <!-- #btnToggleTheme -->
-                    <button id="btnToggleTheme" class="btn" type="btn"><i class="fa fa-moon"></i></button>
+                    <div>
+                        <button id="btnNavCarrinho" class="btn" type="btn"><i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#carrinho" aria-controls="carrinho"></i></button>  
+                        <button id="btnToggleTheme" class="btn" type="btn"><i class="fa fa-sun"></i></button>  
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container-fluid">
-        <section class="banner">
+    <main class="container-fluid d-flex flex-column justify-content-center align-items-center">
+        <section >
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="w-100 carousel-inner">
                     <div class="carousel-item active">
                         <img src="src/img/banner/banner.png" class="d-block w-100" alt="img 1">
                     </div>
@@ -66,49 +69,92 @@
             </div>  
         </section>
 
-        <section class="petiscos ">
-            <h2>SEU PET PRECISA DE COMIDA? OU DE UNS PETISCOS? VOCÊ ESTÁ NO LUGAR CERTO!</h2>
-            <div class="dogs">
-                <img src="src/img/dogsSection/img1.png" alt="img1" srcset="">
-                <img src="src/img/dogsSection/img2.png" alt="img1" srcset="">
-                <img src="src/img/dogsSection/img3.png" alt="img1" srcset="">
-                <img src="src/img/dogsSection/img4.png" alt="img1" srcset="">
+        <section class="banner container-fluid d-flex flex-column justify-content-center align-items-center">
+            <h4>SEU PET PRECISA DE COMIDA? OU DE UNS PETISCOS? VOCÊ ESTÁ NO LUGAR CERTO!</h4>
+            <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center gap-0">
+                <img class="w-25" src="src/img/dogsSection/img1.png" alt="img1" srcset="">
+                <img class="w-25" src="src/img/dogsSection/img2.png" alt="img1" srcset="">
+                <img class="w-25" src="src/img/dogsSection/img3.png" alt="img1" srcset="">
+                <img class="w-25" src="src/img/dogsSection/img4.png" alt="img1" srcset="">
             </div>
-            <p>Na nossa empresa, sabemos que seu pet é mais do que apenas um animal de estimação; ele é parte da sua família. Por isso, estamos comprometidos em fornecer os melhores cuidados do mercado, garantindo que seu amiguinho peludo receba toda a atenção, carinho e proteção de que ele precisa. A responsabilidade é o nosso lema, e cuidar do seu pet como se fosse o nosso próprio é a nossa missão. Com uma equipe dedicada de profissionais apaixonados por animais, instalações de ponta e uma variedade de serviços que atendem a todas as necessidades do seu pet, estamos aqui para garantir que ele tenha uma vida feliz e saudável. Deixe-nos cuidar do seu pet, para que você possa aproveitar cada momento especial com ele, sabendo que está em mãos seguras e amorosas.</p>
+            <p class="text-center">Na nossa empresa, sabemos que seu pet é mais do que apenas um animal de estimação; ele é parte da sua família. Por isso, estamos comprometidos em fornecer os melhores cuidados do mercado, garantindo que seu amiguinho peludo receba toda a atenção, carinho e proteção de que ele precisa. A responsabilidade é o nosso lema, e cuidar do seu pet como se fosse o nosso próprio é a nossa missão. Com uma equipe dedicada de profissionais apaixonados por animais, instalações de ponta e uma variedade de serviços que atendem a todas as necessidades do seu pet, estamos aqui para garantir que ele tenha uma vida feliz e saudável. Deixe-nos cuidar do seu pet, para que você possa aproveitar cada momento especial com ele, sabendo que está em mãos seguras e amorosas.</p>
         </section>
 
-        <section class="produtos ">
-            <h2>CATÁLOGO DE PRODUTOS</h2>
-            <div id="prodCards"></div>
+        <section id="galeria" class="c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
+            <h4>CATÁLOGO DE PRODUTOS</h4>
+            <div id="prodCards" class="container-fluid d-flex flex-wrap justify-content-center align-items-start gap-2"  ></div>
         </section>
 
-        <section class="adote ">
-            <h2>ADOTE UM PET</h2>
-            <div>
-                <p>Insira aqui as suas informações para que possamos encontrar um amigo para você!</p>
-                <form action="submit">
-                    <label for="txtEmail">Email</label>
-                    <input id="txtEmail" type="text" placeholder="Insira seu Email">
-                    <label for="txtEmail">Telefone</label>
-                    <input id="txtFome" type="text" placeholder="Insira seu telefone">
-                    <input type="checkbox" name="" id="" title="Aceita receber notificações?">
-                    
-                    <button type="submit">Enviar</button>
-                </form>
+        <section id="adocao" class="mb-1 mt-5 container-fluid d-flex flex-column align-items-center" >
+            <h4 class="c-rosa">ADOTE UM PET</h4>
+            <div class="d-flex justify-content-beetwen">
+                <div class="d-flex flex-column align-items-center" >
+                    <p class="c-azul">Insira aqui as suas informações para que possamos encontrar um amigo para você!</p>
+                    <form class="d-flex flex-column align-items-start gap-1" action="submit">
+                        <label for="txtEmail">Email</label>
+                        <input id="txtEmail" class="w-100" type="text" placeholder="Insira seu Email">
+                        
+                        <label for="txtEmail">Telefone</label>
+                        <input id="txtFome" class="w-100" type="text" placeholder="Insira seu telefone">
+                       
+                        <input id="chkNotificacoes" type="checkbox"><label for="chkNotificacoes">Receber notificações</label>
+                        
+                        <button id="btnSubmit" class="btn btn-primary bg-azul align-self-center" type="submit">Enviar</button>
+                        
+                    </form>
+                </div>
+                <img class="w-50" src="src/img/imgBanner.png" alt="">
             </div>
-            <img src="src/img/imgBanner.png" alt="">
+            
         </section>
     </main>
     
-    <footer>
+    <footer class="container-fluid d-flex justify-content-around mt-2">
         <p class="copyright">Todos os direitos reservados a <span class="author">@PawShop</span> - 2023</p>
     </footer>
 
+
+    <!-- offcanvas -->
+    <!-- offcanvas carrinho -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="carrinho" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <h5>Shopping cart</h5>
+            <div id="cartItems" class="d-flex flex-column gap-2"></div> 
+            <div class="cartTotal d-flex justify-content-between">
+                <p>Total</p>
+                <p id="cartValue">0</p>
+            </div> 
+            <button class="m-3 btn btn-block rounded bg-azul align-self-center" type="button">COMPRAR</button>
+        </div>
+        <div class="offcanvas-footer">
+        </div>
+    </div>
     <!-- modal -->
-    
+    <div id="modalProduto" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="modalTitle" class="modal-title fs-5">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modalBody" class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-    <!-- js bootrap -->
-    <script src="src/js/bootstrap.bundle.js"></script>
-    <!-- js local -->
-    <script src="src/js/index.js"></script>
+<!-- js bootrap -->
+<script src="src/js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- js local -->
+<script src="src/js/index.js"></script>
 </html>
