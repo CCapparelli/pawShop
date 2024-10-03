@@ -15,8 +15,13 @@
     <title>Document</title>
 </head>
 <body data-bs-theme="light">
-    <header class="container-fluid position-fixed top-0">
+    <!-- Essa div trabalha em conjunto com header.position.fixed (cf. arquivo css) -->
+    <div class="h-spacer container-fluid" style="height: 56px;"></div>
+    
+    <header class="container-fluid">
+
         <nav class="navbar navbar-expand-lg">
+
             <div class="container-fluid">
                 <img id="imgLogo" src="src/img/logo/logoDark.svg" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,15 +44,16 @@
         </nav>
     </header>
 
-    <main class="container-fluid d-flex flex-column justify-content-center align-items-center">
-        <section >
+    <main class="container-fluid p-0 m-0">
+
+        <section class="banner" >
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="w-100 carousel-inner">
+                <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="src/img/banner/banner.png" class="d-block w-100" alt="img 1">
                     </div>
@@ -69,9 +75,9 @@
             </div>  
         </section>
 
-        <section class="banner container-fluid d-flex flex-column justify-content-center align-items-center">
+        <section class="petiscos container-fluid d-flex flex-column justify-content-center align-items-center">
             <h4>SEU PET PRECISA DE COMIDA? OU DE UNS PETISCOS? VOCÊ ESTÁ NO LUGAR CERTO!</h4>
-            <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center gap-0">
+            <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center gap-0 px-5">
                 <img class="w-25" src="src/img/dogsSection/img1.png" alt="img1" srcset="">
                 <img class="w-25" src="src/img/dogsSection/img2.png" alt="img1" srcset="">
                 <img class="w-25" src="src/img/dogsSection/img3.png" alt="img1" srcset="">
@@ -80,27 +86,28 @@
             <p class="text-center">Na nossa empresa, sabemos que seu pet é mais do que apenas um animal de estimação; ele é parte da sua família. Por isso, estamos comprometidos em fornecer os melhores cuidados do mercado, garantindo que seu amiguinho peludo receba toda a atenção, carinho e proteção de que ele precisa. A responsabilidade é o nosso lema, e cuidar do seu pet como se fosse o nosso próprio é a nossa missão. Com uma equipe dedicada de profissionais apaixonados por animais, instalações de ponta e uma variedade de serviços que atendem a todas as necessidades do seu pet, estamos aqui para garantir que ele tenha uma vida feliz e saudável. Deixe-nos cuidar do seu pet, para que você possa aproveitar cada momento especial com ele, sabendo que está em mãos seguras e amorosas.</p>
         </section>
 
-        <section id="galeria" class="c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
+        <section id="galeria" class="galeria c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
             <h4>CATÁLOGO DE PRODUTOS</h4>
-            <div id="prodCards" class="container-fluid d-flex flex-wrap justify-content-center align-items-start gap-2"  ></div>
+            <div id="prodCards" class="prodCards d-flex flex-wrap justify-content-center align-items-start gap-2"  ></div>
         </section>
 
         <section id="adocao" class="mb-1 mt-5 container-fluid d-flex flex-column align-items-center" >
             <h4 class="c-rosa">ADOTE UM PET</h4>
-            <div class="d-flex justify-content-beetwen">
+            <div class="d-flex justify-content-between gap-3">
                 <div class="d-flex flex-column align-items-center" >
                     <p class="c-azul">Insira aqui as suas informações para que possamos encontrar um amigo para você!</p>
                     <form class="d-flex flex-column align-items-start gap-1" action="submit">
                         <label for="txtEmail">Email</label>
                         <input id="txtEmail" class="w-100" type="text" placeholder="Insira seu Email">
                         
-                        <label for="txtEmail">Telefone</label>
+                        <label for="txtEmail" class="mt-3">Telefone</label>
                         <input id="txtFome" class="w-100" type="text" placeholder="Insira seu telefone">
                        
-                        <input id="chkNotificacoes" type="checkbox"><label for="chkNotificacoes">Receber notificações</label>
-                        
-                        <button id="btnSubmit" class="btn btn-primary bg-azul align-self-center" type="submit">Enviar</button>
-                        
+                        <div class="d-flex align-items-center gap-2 mt-3">
+                            <input id="chkNotificacoes" type="checkbox">
+                            <label for="chkNotificacoes">Aceita receber notificações?</label>
+                        </div>
+                        <button id="btnSubmit" class="btn btn-primary bg-azul align-self-center mt-3" type="submit">ENVIAR</button>
                     </form>
                 </div>
                 <img class="w-50" src="src/img/imgBanner.png" alt="">
@@ -116,13 +123,12 @@
 
     <!-- offcanvas -->
     <!-- offcanvas carrinho -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="carrinho" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="carrinho" aria-labelledby="carrinho">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Carrinho</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
-            <h5>Shopping cart</h5>
             <div id="cartItems" class="d-flex flex-column gap-2"></div> 
             <div class="cartTotal d-flex justify-content-between">
                 <p>Total</p>
@@ -141,12 +147,9 @@
                     <h1 id="modalTitle" class="modal-title fs-5">Modal title</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div id="modalBody" class="modal-body">
-                ...
-                </div>
+                <div id="modalBody" class="modal-body"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

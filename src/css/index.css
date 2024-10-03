@@ -2,7 +2,6 @@
     margin:0;
     padding: 0;
 } */
-
 :root {
     --azul: #6EB3D0;
     --verde: #B6D7A8;
@@ -10,33 +9,6 @@
     --laranja: #F4A623;
 }
 
-header, footer {
-    background-color: var(--azul);
-}
-
-header {
-    z-index: 9999;
-    margin-bottom: 50px!important;
-}
-.banner {
-    color: var(--azul);
-    justify-content: center;
-}
-.banner h4, .banner p {
-    text-align: center;
-}
-h4, .banner p {
-    margin: 30px;
-}
-form  {
-    width: 80%;
-}
-form button {
-    margin-top: 10px;
-}
-
-.copyright { margin-top: 15px; }
-.author { font-weight: bold; }
 .c-laranja { color: var(--laranja); }
 .c-azul { color: var(--azul); }
 .c-rosa { color: var(--rosa); }
@@ -47,6 +19,53 @@ form button {
 .bg-rosa { background-color: var(--rosa); }
 .bg-verde { background-color: var(--verde); }
 
+.copyright { margin-top: 15px; }
+.author { font-weight: bold; }
+.cArrow { cursor: default; }
+.cHand { cursor: pointer; }
+
+header, footer {
+    background-color: var(--azul);
+}
+
+/* trabalha em conjunto com a div HTML h-spacer */
+header {
+    top:0;
+    position: fixed;
+    z-index: 9999;
+}
+
+#carrinho {
+    margin-top: 60px;
+}
+.petiscos {
+    color: var(--azul);
+    justify-content: center;
+}
+h4, .petiscos p {
+    margin: 30px;
+}
+
+
+.cartItem {
+    height: 70px;
+}
+.card-price {
+    color: var(--verde);
+    font-weight: bold;;
+}
+.cartTotal {
+    margin-top: 10px;
+    border-top: 1px solid black;
+}
+
+
+form  {
+    width: 80%;
+}
+form button {
+    margin-top: 10px;
+}
 .btn-form {
     color: black;
     background-color: var(--rosa);
@@ -54,19 +73,4 @@ form button {
 }
 .btn-form:hover {
     background-color: var(--azul);
-}
-.card-price {
-    color: var(--verde);
-    font-weight: bold;;
-}
-
-.cArrow { cursor: default; }
-.cHand { cursor: pointer; }
-
-.cartItem {
-    height: 70px;
-}
-.cartTotal {
-    margin-top: 10px;
-    border-top: 1px solid black;
 }
