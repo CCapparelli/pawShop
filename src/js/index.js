@@ -1,22 +1,23 @@
 // HTML elements
-const imgLogo = document.getElementById('imgLogo');
-const body = document.querySelector("body");
-const btnToggleTheme = document.getElementById("btnToggleTheme");
+const imgLogo           = document.getElementById('imgLogo');
+const body              = document.querySelector('body');
+const btnToggleTheme    = document.getElementById('btnToggleTheme');
 
-const prodCards = document.getElementById("prodCards");
-const cartItems = document.getElementById('cartItems');
-const cartValue = document.getElementById('cartValue');
+const prodCards     = document.getElementById('prodCards');
+const cartItems     = document.getElementById('cartItems');
+const cartValue     = document.getElementById('cartValue');
 
-const modalBody = document.getElementById('modalBody');
-const modalTitle = document.getElementById('modalTitle');
+const modalBody     = document.getElementById('modalBody');
+const modalTitle    = document.getElementById('modalTitle');
 
-const ofcanvas   = document.getElementById('carrinho');
+const ofcanvas      = document.getElementById('carrinho');
 
 // event handlers
 btnToggleTheme.addEventListener('click', toggleTheme);
-
+// btnToggleTheme.on('click', toggleTheme);
 
 // OOP
+
 class Product {
     constructor(id, img, titulo, descricao, preco) {
         this.id = id;
@@ -47,16 +48,34 @@ class Cart {
         });
         return result;
     }
+    
+    increase(id) {
+        var item = this.items.filter(x => x.productId === id)[0];
+        item.qtd++;
+    }
+    
+    decrease(id) {
+        var item = this.items.filter(x => x.productId === id)[0];
+        if (item.qtd > 1) {
+            item.qtd--;
+        }
+    }
+    
+    remove(item) {
+        var idx  = carrinho.items.indexOf(item);
+        this.items.splice(idx, 1);
+    }
 }
 
 class CartItem {
     constructor(productId, qtd) {
         this.productId = productId;
-        this.qtd = qtd;
+        this.qtd = Number(qtd);
     }
 }
 
 // data
+
 var carrinho = new Cart();
 var products = [];
 
@@ -78,7 +97,8 @@ products.forEach(x => {
                     <p class="card-price">R$ ${x.preco}</p>
                     <div class="w-100 d-flex justify-content-between align-items-center">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn btn-primary btn-form" onclick="modalExibir(${x.id});">VER MAIS</a>
-                        <!-- -->
+                        
+                        <!-- adiciona o item (mostra o alert) e então mostra o carrinho [data-bs-toggle & target] -->
                         <i id="btnCardCarrinho" class="cHand fa-solid fa-cart-arrow-down" onclick="adicionar(${x.id});" data-bs-toggle="offcanvas" data-bs-target="#carrinho" ></i>  
                     </div>
                 </div>
@@ -88,25 +108,25 @@ products.forEach(x => {
 });
 
 // behavior
+
 function modalExibir(id) {
     var product = products.filter(x => x.id === id)[0];
     modalTitle.innerText = product.titulo;
 
-    modalBody.innerHTML = '';
-    modalBody.innerHTML += `
-        <div class="modal-test d-flex">
-            <img src="${product.img}" class="w-25 align-self-start" alt="...">
+    var html  = `
+        <div class="modal-test d-flex gap-3">
+            <img src="${product.img}" class="w-50 align-self-start" alt="...">
             <div class="modal-test-info d-flex flex-column">`;
     
     product.descricao.forEach(x => { 
-        modalBody.innerHTML += `<p>${x}</p>`;
+        html += `<p class="text-align-justify">${x}</p>`;
     });
 
-    modalBody.innerHTML += `<p class="card-price">R$ ${product.preco}</p>
-    
+    html + `<p>R$ ${product.preco}</p>
             </div>
-        </div>
-    `;
+        </div>`;
+
+    modalBody.innerHTML = html;
 }
 
 function toggleTheme(){
@@ -125,11 +145,8 @@ function adicionar(id) {
     carrinho.add(new CartItem(id, 1));
     refreshCartItems();
     
-
     var prod = products.filter(x => x.id === id)[0];
     alert(`${prod.titulo} adicionado ao carrinho.`);
-
-
 }
 
 function refreshCartItems() {
@@ -144,14 +161,39 @@ function refreshCartItems() {
         <div class="w-100 d-flex justify-content-between align-items-center">
             <h5 class="m-0">${product.preco}</h5>
             <div class="d-flex align-items-center">
-                <i class="cHand m-1 fa fa-minus text-danger" onclick=""></i>
+                <i class="cHand m-1 fa fa-minus text-danger" onclick="decrease(${product.id});"></i>
                 <div class="cArrow m-1">${item.qtd}</div>
-                <i class="cHand m-1 fa fa-plus text-success" onclick=""></i>
+                <i class="cHand m-1 fa fa-plus text-success" onclick="increase(${product.id});"></i>
             </div>
-            <i class="cHand fa fa-trash me-2" onclick=""></i>
+            <i class="cHand fa fa-trash me-2" onclick="remove(${product.id});"></i>
         </div>
     </div>
 </div>`;
     });
     cartValue.innerText = carrinho.total();
 }
+
+function increase(id) {
+    carrinho.increase(id);
+    refreshCartItems();
+}
+
+function decrease(id) {
+    carrinho.decrease(id);
+    refreshCartItems();
+}
+
+function remove(id) {
+    var item = carrinho.items.filter(x => x.productId === id)[0];
+    var prod = products.filter(x => x.id === id)[0];
+    
+    var ok = confirm(`Remover ${prod.titulo} - qtd : ${item.qtd} ?`);
+    if (ok) {
+        carrinho.remove(item);
+        refreshCartItems();
+    }
+}
+
+
+
+
