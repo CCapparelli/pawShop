@@ -109,8 +109,10 @@ products.forEach(x => {
 
 // behavior
 
+const productById = (id) => products.filter(x => x.id === id)[0];
+
 function modalExibir(id) {
-    var product = products.filter(x => x.id === id)[0];
+    var product = productById(id);
     modalTitle.innerText = product.titulo;
 
     var html  = `
@@ -145,14 +147,14 @@ function adicionar(id) {
     carrinho.add(new CartItem(id, 1));
     refreshCartItems();
     
-    var prod = products.filter(x => x.id === id)[0];
+    var prod = productById(id);
     alert(`${prod.titulo} adicionado ao carrinho.`);
 }
 
 function refreshCartItems() {
     cartItems.innerHTML = '';
     carrinho.items.forEach(item => {
-        var product = products.filter(x => x.id === item.productId)[0];
+        var product = productById(id);
         cartItems.innerHTML += `
 <div class="cartItem w-100 d-flex justify-content-start p-2 bg-azul rounded gap-2">
     <img class="rounded" src="${product.img}" width="55" height="55">
@@ -185,7 +187,7 @@ function decrease(id) {
 
 function remove(id) {
     var item = carrinho.items.filter(x => x.productId === id)[0];
-    var prod = products.filter(x => x.id === id)[0];
+    var prod = productById(id);
     
     var ok = confirm(`Remover ${prod.titulo} - qtd : ${item.qtd} ?`);
     if (ok) {
