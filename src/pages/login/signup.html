@@ -56,7 +56,7 @@
             <img src="../../img/imgBanner.png" alt="">
         </div>
         <div class="divRight container d-flex flex-column c-azul">
-            <h4 class="c-azul">LOGIN</h4>
+            <h4 class="c-azul">CADASTRO</h4>
             <form id="loginForm" action="#" method="post" class="container d-flex flex-column">
                 <label for="userName">Nome do usuário *</label>
                 <input id="userName" type="text" required>
@@ -64,14 +64,17 @@
                 <label class="mt-3" for="userMail">E-mail *</label>
                 <input id="userMail" type="email" placeholder="usuario@.sistemafibra.org.br" required>
 
-                <div class="mt-3 d-flex justify-content-between align-items-center">
-                    <div class="d-flex gap-2 align-items-center">
-                        <label for="remember">Lembrar me</label>
-                        <input id="remember" type="checkbox" name="">
+                <label class="mt-3 for="password">Senha *</label>
+                <input id="password" type="text" required>
+
+                <label class="mt-3 for="password2">Confirme a senha *</label>
+                <input id="password2" type="text" required>
+
+                    <div class="mt-3 d-flex gap-2 justify-content-end align-items-center">
+                        <label for="termos">Aceito os termos</label>
+                        <input id="termos" type="checkbox" name="" required>
                     </div>
-                    <a href="signup.html">Cadastrar...</a>
-                </div>
-                <button class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> ENTRAR </button>
+                <button class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> CADASTRAR </button>
             </form>
         </div>
     </main>
