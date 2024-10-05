@@ -11,16 +11,14 @@
     <!-- css local -->
     <link rel="stylesheet" href="src/css/index.css">
     <!-- css fim -->
+    <link rel="shortcut icon" href="src/img/logo/logoWhite.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paw Shop</title>
 </head>
 <body data-bs-theme="light">
-    <!-- Essa div trabalha em conjunto com header.position.fixed (cf. arquivo css) -->
-    <div class="h-spacer container-fluid" style="height: 56px;"></div>
     <header class="container-fluid">
 
-        <nav class="navbar navbar-expand-lg">
-
+        <nav id="headerNav" class="navbar navbar-expand-lg navbar-light fixed-top bg-azul">
             <div class="container-fluid">
                 <img id="imgLogo" src="src/img/logo/logoDark.svg" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,15 +27,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="#produtos">Produtos</a></li>
                         <li class="nav-item"><a class="nav-link " aria-current="page" href="#adocao">Adoção</a></li>
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="#galeria">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="#">Contatos</a></li>
                         <li class="nav-item"><a class="nav-link " aria-current="page" href="src/pages/loja/">Loja</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="#">Contatos</a></li>
                     </ul>
                     <!-- #btnToggleTheme -->
                     <div>
-                        <button id="btnNavCarrinho" class="btn" type="btn"><i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#carrinho" aria-controls="carrinho"></i></button>  
-                        <button id="btnToggleTheme" class="btn" type="btn"><i class="fa fa-sun"></i></button>  
+                        <button id="btnNavCarrinho" class="btn" type="btn"><i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#offCarrinho" aria-controls="offCarrinho"></i></button>  
+                        <button id="btnUser" class="btn" type="btn"><i class="fa fa-user"  data-bs-toggle="offcanvas" data-bs-target="#offUser" aria-controls="#offUser"></i></button>  
                     </div>
                 </div>
             </div>
@@ -76,7 +74,7 @@
         </section>
 
         <section class="petiscos container-fluid d-flex flex-column justify-content-center align-items-center">
-            <h4>SEU PET PRECISA DE COMIDA? OU DE UNS PETISCOS? VOCÊ ESTÁ NO LUGAR CERTO!</h4>
+            <h4>SEU PET PRECISA DE ALGO? VOCÊ ESTÁ NO LUGAR CERTO!</h4>
             <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center gap-0 px-5">
                 <img class="w-25" src="src/img/dogsSection/img1.png" alt="img1" srcset="">
                 <img class="w-25" src="src/img/dogsSection/img2.png" alt="img1" srcset="">
@@ -86,12 +84,12 @@
             <p class="text-center">Na nossa empresa, sabemos que seu pet é mais do que apenas um animal de estimação; ele é parte da sua família. Por isso, estamos comprometidos em fornecer os melhores cuidados do mercado, garantindo que seu amiguinho peludo receba toda a atenção, carinho e proteção de que ele precisa. A responsabilidade é o nosso lema, e cuidar do seu pet como se fosse o nosso próprio é a nossa missão. Com uma equipe dedicada de profissionais apaixonados por animais, instalações de ponta e uma variedade de serviços que atendem a todas as necessidades do seu pet, estamos aqui para garantir que ele tenha uma vida feliz e saudável. Deixe-nos cuidar do seu pet, para que você possa aproveitar cada momento especial com ele, sabendo que está em mãos seguras e amorosas.</p>
         </section>
 
-        <section id="galeria" class="galeria c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
+        <section id="produtos" class="produtos c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
             <h4>CATÁLOGO DE PRODUTOS</h4>
             <div id="prodCards" class="prodCards d-flex flex-wrap justify-content-center align-items-start gap-2"  ></div>
         </section>
 
-        <section id="adocao" class="mb-1 mt-5 container-fluid d-flex flex-column align-items-center" >
+        <section id="adocao" class="adocao container-fluid d-flex flex-column align-items-center" >
             <h4 class="c-rosa">ADOTE UM PET</h4>
             <div class="d-flex justify-content-between gap-3">
                 <div class="d-flex flex-column align-items-center" >
@@ -123,7 +121,7 @@
 
     <!-- offcanvas -->
     <!-- offcanvas carrinho -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="carrinho" aria-labelledby="carrinho">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offCarrinho" aria-labelledby="offCarrinho">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Carrinho</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -139,6 +137,27 @@
         <div class="offcanvas-footer">
         </div>
     </div>
+    <!-- offcanvas user -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offUser" aria-labelledby="offUser">
+        <div class="offcanvas-header">
+            <h5 id="offUserTitle" class="offcanvas-title">User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between h-100">
+            <!--  -->
+            <div class="align-bottom">
+                <h6 class="c-cinza">Settings</h6>
+                <a href="#" id="btnToggleTheme"><i class="fa fa-moon"></i>  Modo escuro</a>  
+            </div>
+            <div class="align-self-baseline">
+                <h6 class="c-cinza">Actions</h6>
+                <a href="src/pages/login/">Login</a>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+        </div>
+    </div>
+
     <!-- modal -->
     <div id="modalProduto" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">

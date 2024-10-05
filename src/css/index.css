@@ -9,6 +9,7 @@
 .c-azul { color: var(--azul); }
 .c-rosa { color: var(--rosa); }
 .c-verde { color: var(--verde); }
+.c-cinza { color: silver; }
 
 .bg-laranja { background-color: var(--laranja); }
 .bg-azul { background-color: var(--azul); }
@@ -19,6 +20,15 @@
 .author { font-weight: bold; }
 .cArrow { cursor: default; }
 .cHand { cursor: pointer; }
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+a:hover {
+    color: var(--azul);
+}
 
 header, footer {
     background-color: var(--azul);
@@ -31,15 +41,19 @@ header {
     z-index: 9999;
 }
 
-#carrinho {
+#offCarrinho, #offUser {
     margin-top: 60px;
+    margin-bottom: 5px;
 }
 .petiscos {
     color: var(--azul);
     justify-content: center;
 }
-h4, .petiscos p {
-    margin: 30px;
+.petiscos p {
+    padding-top: 30px;
+}
+h4 {
+    padding: 30px;
 }
 
 
@@ -69,4 +83,8 @@ form button {
 }
 .btn-form:hover {
     background-color: var(--azul);
+}
+
+.produtos, .adocao {
+    padding-top: 50px;
 }

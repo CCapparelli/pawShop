@@ -10,7 +10,8 @@ const cartValue     = document.getElementById('cartValue');
 const modalBody     = document.getElementById('modalBody');
 const modalTitle    = document.getElementById('modalTitle');
 
-const ofcanvas      = document.getElementById('carrinho');
+const ofcanvas      = document.getElementById('offCarrinho');
+const headerNav      = document.getElementById('headerNav');
 
 // event handlers
 btnToggleTheme.addEventListener('click', toggleTheme);
@@ -99,7 +100,7 @@ products.forEach(x => {
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn btn-primary btn-form" onclick="modalExibir(${x.id});">VER MAIS</a>
                         
                         <!-- adiciona o item (mostra o alert) e então mostra o carrinho [data-bs-toggle & target] -->
-                        <i id="btnCardCarrinho" class="cHand fa-solid fa-cart-arrow-down" onclick="adicionar(${x.id});" data-bs-toggle="offcanvas" data-bs-target="#carrinho" ></i>  
+                        <i id="btnCardCarrinho" class="cHand fa-solid fa-cart-arrow-down" onclick="adicionar(${x.id});" data-bs-toggle="offcanvas" data-bs-target="#offCarrinho" ></i>  
                     </div>
                 </div>
             </div>
@@ -134,12 +135,16 @@ function modalExibir(id) {
 function toggleTheme(){
     if(body.getAttribute('data-bs-theme') == 'dark'){
         body.setAttribute('data-bs-theme','light');
-        btnToggleTheme.innerHTML='<i class="fa fa-sun">';
+        btnToggleTheme.innerHTML='<i class="fa fa-moon"></i>  Modo escuro';
         imgLogo.src = 'src/img/logo/logoDark.svg';
+        headerNav.classList.toggle('navbar-light','navbar-dark');
+        headerNav.style.color = 'black';
     }else{
         body.setAttribute('data-bs-theme','dark');
-        btnToggleTheme.innerHTML='<i class="fa fa-moon">';
+        btnToggleTheme.innerHTML='<i class="fa fa-sun"></i>  Modo claro';
         imgLogo.src = 'src/img/logo/logoWhite.svg';
+        headerNav.classList.toggle('navbar-dark','navbar-light');
+        headerNav.style.color = 'black';
     }
 }
 
@@ -154,7 +159,7 @@ function adicionar(id) {
 function refreshCartItems() {
     cartItems.innerHTML = '';
     carrinho.items.forEach(item => {
-        var product = productById(id);
+        var product = productById(item.productId);
         cartItems.innerHTML += `
 <div class="cartItem w-100 d-flex justify-content-start p-2 bg-azul rounded gap-2">
     <img class="rounded" src="${product.img}" width="55" height="55">
