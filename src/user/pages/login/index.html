@@ -57,21 +57,21 @@
         </div>
         <div class="divRight container d-flex flex-column c-azul">
             <h4 class="c-azul">LOGIN</h4>
-            <form id="loginForm" action="#" method="post" class="container d-flex flex-column">
-                <label for="userName">Nome do usuário *</label>
-                <input id="userName" type="text" required>
+            <form id="formLogin" action="#" method="post" class="container d-flex flex-column">
+                <label for="txtUserInput">Nome ou Email do usuário *</label>
+                <input id="txtUserInput" type="text" required>
 
-                <label class="mt-3" for="userMail">E-mail *</label>
-                <input id="userMail" type="email" placeholder="usuario@.sistemafibra.org.br" required>
+                <label class="mt-3" for="txtPassword">Senha *</label>
+                <input id="txtPassword" type="password" required>
 
                 <div class="mt-3 d-flex justify-content-between align-items-center">
                     <div class="d-flex gap-2 align-items-center">
-                        <label for="remember">Lembrar me</label>
-                        <input id="remember" type="checkbox" name="">
+                        <label for="chkLembrar">Lembrar me</label>
+                        <input id="chkLembrar" type="checkbox" name="">
                     </div>
                     <a href="signup.html">Cadastrar...</a>
                 </div>
-                <button class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> ENTRAR </button>
+                <button id="btnEntrar" class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> ENTRAR </button>
             </form>
         </div>
     </main>
@@ -142,8 +142,9 @@
 <!-- js jQuery -->
 <script src="/src/user/js/jquery-3.7.1.min.js"></script>
 <!-- js local -->
-<!-- <script src="js/product.js"></script> -->
-<!-- <script src="/src/user/js/index.js"></script> -->
-<!-- <script src="js/index.js"></script> -->
+<script src="/src/sevices/data/objectModel.js"></script>
+<script src="/src/sevices/settings.js"></script>
+<script src="/src/sevices/gateway/user.js"></script>
+<script src="js/index.js"></script>
 
 </html>

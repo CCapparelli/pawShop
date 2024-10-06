@@ -23,7 +23,7 @@
     <header class="container-fluid">
         <nav id="headerNav" class="navbar navbar-expand-lg navbar-light fixed-top bg-azul">
             <div class="container-fluid">
-                <img id="imgLogo" src="../../img/logo/logoDark.svg" alt="">
+                <img id="imgLogo" src="/src/user/img/logo/logoDark.svg" alt="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -57,24 +57,24 @@
         </div>
         <div class="divRight container d-flex flex-column c-azul">
             <h4 class="c-azul">CADASTRO</h4>
-            <form id="loginForm" action="#" method="post" class="container d-flex flex-column">
-                <label for="userName">Nome do usuário *</label>
-                <input id="userName" type="text" required>
+            <form id="formCadastrar" action="#" method="post" class="container d-flex flex-column">
+                <label for="txtUserName">Nome do usuário *</label>
+                <input id="txtUserName" type="text" required>
 
-                <label class="mt-3" for="userMail">E-mail *</label>
-                <input id="userMail" type="email" placeholder="usuario@.sistemafibra.org.br" required>
+                <label class="mt-3" for="txtUserMail">E-mail *</label>
+                <input id="txtUserMail" type="email" placeholder="usuario@.sistemafibra.org.br" required>
 
-                <label class="mt-3 for="password">Senha *</label>
-                <input id="password" type="text" required>
+                <label class="mt-3" for="txtPassword">Senha *</label>
+                <input id="txtPassword" type="password" required>
 
-                <label class="mt-3 for="password2">Confirme a senha *</label>
-                <input id="password2" type="text" required>
+                <label class="mt-3" for="txtPassword2">Confirme a senha *</label>
+                <input id="txtPassword2" type="password" required>
 
                     <div class="mt-3 d-flex gap-2 justify-content-end align-items-center">
-                        <label for="termos">Aceito os termos</label>
-                        <input id="termos" type="checkbox" name="" required>
+                        <label for="chkTermos">Aceito os termos</label>
+                        <input id="chkTermos" type="checkbox" name="" required>
                     </div>
-                <button class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> CADASTRAR </button>
+                <button id="btnCadastrar" class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> CADASTRAR </button>
             </form>
         </div>
     </main>
@@ -145,8 +145,9 @@
 <!-- js jQuery -->
 <script src="/src/user/js/jquery-3.7.1.min.js"></script>
 <!-- js local -->
-<!-- <script src="js/product.js"></script> -->
-<!-- <script src="/src/user/js/index.js"></script> -->
-<!-- <script src="js/index.js"></script> -->
+<script src="/src/sevices/data/objectModel.js"></script>
+<script src="/src/sevices/settings.js"></script>
+<script src="/src/sevices/gateway/user.js"></script>
+<script src="js/signup.js"></script>
 
 </html>
