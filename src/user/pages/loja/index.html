@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <!-- css bootstrap -->
@@ -11,74 +10,44 @@
     <link rel="stylesheet" href="../../css/font-awesome/all.min.css">
     <!-- css local -->
     <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="css/index.css">
     <!-- css fim -->
-    <link rel="shortcut icon" href="../../img/logo/logoWhite.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../user/img/logo/logoWhite.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paw Shop</title>
 </head>
-
 <body data-bs-theme="light">
-    <div style="height:56px;"></div>
+    <!-- <div style="height:56px;"></div> -->
     <header class="container-fluid">
         <nav id="headerNav" class="navbar navbar-expand-lg navbar-light fixed-top bg-azul">
             <div class="container-fluid">
-                <img id="imgLogo" src="../../img/logo/logoDark.svg" alt="">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <img id="imgLogo" src="/src/user/img/logo/logoDark.svg" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../../../">Home</a></li>
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../../../#adocao">Adoção</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="/src/pages/loja/">Loja</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../../../../">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="../../../../#adocao">Adoção</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/src/user/pages/loja/">Loja</a></li>
                         <li class="nav-item"><a class="nav-link " aria-current="page" href="#">Contatos</a></li>
                     </ul>
                     <!-- #btnToggleTheme -->
                     <div>
-                        <button id="btnNavCarrinho" class="btn" type="btn"><i class="fa-solid fa-cart-shopping"
-                                data-bs-toggle="offcanvas" data-bs-target="#offCarrinho"
-                                aria-controls="offCarrinho"></i></button>
-                        <button id="btnUser" class="btn" type="btn"><i class="fa fa-user" data-bs-toggle="offcanvas"
-                                data-bs-target="#offUser" aria-controls="#offUser"></i></button>
+                        <button id="btnNavCarrinho" class="btn" type="btn"><i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#offCarrinho" aria-controls="offCarrinho"></i></button>  
+                        <button id="btnUser" class="btn" type="btn"><i class="fa fa-user"  data-bs-toggle="offcanvas" data-bs-target="#offUser" aria-controls="#offUser"></i></button>  
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container d-flex align-items-center">
-        <div class="divLeft">
-            <img src="../../img/imgBanner.png" alt="">
-        </div>
-        <div class="divRight container d-flex flex-column c-azul">
-            <h4 class="c-azul">CADASTRO</h4>
-            <form id="loginForm" action="#" method="post" class="container d-flex flex-column">
-                <label for="userName">Nome do usuário *</label>
-                <input id="userName" type="text" required>
-
-                <label class="mt-3" for="userMail">E-mail *</label>
-                <input id="userMail" type="email" placeholder="usuario@.sistemafibra.org.br" required>
-
-                <label class="mt-3 for="password">Senha *</label>
-                <input id="password" type="text" required>
-
-                <label class="mt-3 for="password2">Confirme a senha *</label>
-                <input id="password2" type="text" required>
-
-                    <div class="mt-3 d-flex gap-2 justify-content-end align-items-center">
-                        <label for="termos">Aceito os termos</label>
-                        <input id="termos" type="checkbox" name="" required>
-                    </div>
-                <button class="mt-5 mb-3 btn btn-primary bg-azul" type="submit"> CADASTRAR </button>
-            </form>
-        </div>
+    <main class="container-fluid p-0 m-0">
+        <section id="produtos" class="produtos c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
+            <h4>CATÁLOGO DE PRODUTOS</h4>
+            <div id="prodCards" class="prodCards d-flex flex-wrap justify-content-center align-items-start gap-2"  ></div>
+        </section>
     </main>
-
+    
     <footer class="container-fluid d-flex justify-content-around mt-2">
         <p class="copyright">Todos os direitos reservados a <span class="author">@PawShop</span> - 2023</p>
     </footer>
@@ -92,12 +61,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
-            <div id="cartItems" class="d-flex flex-column gap-2"></div>
+            <div id="cartItems" class="d-flex flex-column gap-2"></div> 
             <div class="cartTotal d-flex justify-content-between">
                 <p>Total</p>
                 <p id="cartValue">0</p>
-            </div>
-            <a href="src/pages/checkout/" class="m-3 btn btn-block rounded bg-azul align-self-center">COMPRAR</a>
+            </div> 
+            <a href="/src/user/pages/checkout/" class="m-3 btn btn-block rounded bg-azul align-self-center" >COMPRAR</a>
         </div>
         <div class="offcanvas-footer">
         </div>
@@ -112,11 +81,11 @@
             <!--  -->
             <div class="align-bottom">
                 <h6 class="c-cinza">Settings</h6>
-                <a href="#" id="btnToggleTheme"><i class="fa fa-moon"></i> Modo escuro</a>
+                <a href="#" id="btnToggleTheme"><i class="fa fa-moon"></i>  Modo escuro</a>  
             </div>
             <div class="align-self-baseline">
                 <h6 class="c-cinza">Actions</h6>
-                <a href="src/pages/login/">Login</a>
+                <a href="/src/user/pages/login/">Login</a>
             </div>
         </div>
         <div class="offcanvas-footer">
@@ -140,13 +109,12 @@
     </div>
 </body>
 <!-- js bootrap -->
-<script src="../../js/bootstrap.bundle.js"></script>
+<script src="/src/user/js/bootstrap.bundle.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
 <!-- js jQuery -->
-<script src="../../js/jquery-3.7.1.min.js"></script>
+<script src="/src/user/js/jquery-3.7.1.min.js"></script>
 <!-- js local -->
-<!-- <script src="js/product.js"></script> -->
-<!-- <script src="../../js/index.js"></script> -->
-<!-- <script src="js/index.js"></script> -->
-
+<script src="js/product.js"></script>
+<script src="/src/user/js/index.js"></script>
+<script src="js/index.js"></script>
 </html>

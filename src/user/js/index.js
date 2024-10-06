@@ -39,7 +39,7 @@ $(document).ready(function() {
     // Your code here
     mostrarProdutos(3);
 });
-const catalogImagePath = '/src/img/products/';
+const catalogImagePath = '/src/user/img/products/';
 
 btnToggleTheme.addEventListener('click', toggleTheme);
 // btnToggleTheme.on('click', toggleTheme);

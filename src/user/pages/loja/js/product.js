@@ -99,5 +99,5 @@ catalog.add(new Product(4, 'productImage4.png','CASINHA',['Nossa casinha para c√
 
 var shoppingCart = new ShoppingCart();
 
-// /src/img/products/
+// /src/user/img/products/
 
