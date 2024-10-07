@@ -75,12 +75,12 @@
         <section class="petiscos container-fluid d-flex flex-column justify-content-center align-items-center">
             <h4>SEU PET PRECISA DE ALGO? VOCÊ ESTÁ NO LUGAR CERTO!</h4>
             <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center gap-0 px-5">
-                <img class="w-25" src="src/user/img/dogsSection/img1.png" alt="img1" srcset="">
-                <img class="w-25" src="src/user/img/dogsSection/img2.png" alt="img1" srcset="">
-                <img class="w-25" src="src/user/img/dogsSection/img3.png" alt="img1" srcset="">
-                <img class="w-25" src="src/user/img/dogsSection/img4.png" alt="img1" srcset="">
+                <img class="w-25" src="/src/user/img/dogsSection/img1.png" alt="img1" srcset="">
+                <img class="w-25" src="/src/user/img/dogsSection/img2.png" alt="img1" srcset="">
+                <img class="w-25" src="/src/user/img/dogsSection/img3.png" alt="img1" srcset="">
+                <img class="w-25" src="/src/user/img/dogsSection/img4.png" alt="img1" srcset="">
             </div>
-            <p class="text-center">Na nossa empresa, sabemos que seu pet é mais do que apenas um animal de estimação; ele é parte da sua família. Por isso, estamos comprometidos em fornecer os melhores cuidados do mercado, garantindo que seu amiguinho peludo receba toda a atenção, carinho e proteção de que ele precisa. A responsabilidade é o nosso lema, e cuidar do seu pet como se fosse o nosso próprio é a nossa missão. Com uma equipe dedicada de profissionais apaixonados por animais, instalações de ponta e uma variedade de serviços que atendem a todas as necessidades do seu pet, estamos aqui para garantir que ele tenha uma vida feliz e saudável. Deixe-nos cuidar do seu pet, para que você possa aproveitar cada momento especial com ele, sabendo que está em mãos seguras e amorosas.</p>
+            <p class="petiscosText">Na nossa empresa, sabemos que seu pet é mais do que apenas um animal de estimação; ele é parte da sua família. Por isso, estamos comprometidos em fornecer os melhores cuidados do mercado, garantindo que seu amiguinho peludo receba toda a atenção, carinho e proteção de que ele precisa. A responsabilidade é o nosso lema, e cuidar do seu pet como se fosse o nosso próprio é a nossa missão. Com uma equipe dedicada de profissionais apaixonados por animais, instalações de ponta e uma variedade de serviços que atendem a todas as necessidades do seu pet, estamos aqui para garantir que ele tenha uma vida feliz e saudável. Deixe-nos cuidar do seu pet, para que você possa aproveitar cada momento especial com ele, sabendo que está em mãos seguras e amorosas.</p>
         </section>
 
         <section id="produtos" class="produtos c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
@@ -94,15 +94,17 @@
                 <div class="d-flex flex-column align-items-center" >
                     <p class="c-azul">Insira aqui as suas informações para que possamos encontrar um amigo para você!</p>
                     <form class="d-flex flex-column align-items-start gap-1" action="submit">
-                        <label for="txtEmail">Email</label>
+                        <label for="txtEmail" class="mt-3">Email</label>
                         <input id="txtEmail" class="w-100" type="text" placeholder="Insira seu Email">
                         
                         <label for="txtEmail" class="mt-3">Telefone</label>
                         <input id="txtFome" class="w-100" type="text" placeholder="Insira seu telefone">
                        
-                        <div class="d-flex align-items-center gap-2 mt-3">
-                            <input id="chkNotificacoes" type="checkbox">
-                            <label for="chkNotificacoes">Aceita receber notificações?</label>
+
+
+                        <div class="w-100 d-flex gap-2 align-items-center">
+                            <input class="p-0 m-0 mt-3" id="chkNotificacoes" type="checkbox">
+                            <label class="p-0 m-0 mt-3" for="chkNotificacoes">Aceita receber notificações?</label>
                         </div>
                         <button id="btnSubmit" class="btn btn-primary bg-azul align-self-center mt-3" type="submit">ENVIAR</button>
                     </form>
@@ -162,6 +164,8 @@
 <!-- js jQuery -->
 <script src="src/user/js/jquery-3.7.1.min.js"></script>
 <!-- js local -->
- <script src="src/user/pages/loja/js/product.js"></script>
+<script src="/src/sevices/data/objectModel.js"></script>
+<script src="/src/sevices/data/data.js"></script>
+<script src="/src/sevices/settings.js"></script>
 <script src="src/user/js/index.js"></script>
 </html>

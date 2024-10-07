@@ -1,17 +1,4 @@
-// HTML elements
-const imgLogo           = document.getElementById('imgLogo');
-const body              = document.querySelector('body');
-const btnToggleTheme    = document.getElementById('btnToggleTheme');
 
-const prodCards     = document.getElementById('prodCards');
-const cartItems     = document.getElementById('cartItems');
-const cartValue     = document.getElementById('cartValue');
-
-const modalBody     = document.getElementById('modalBody');
-const modalTitle    = document.getElementById('modalTitle');
-
-const ofcanvas      = document.getElementById('offCarrinho');
-const headerNav      = document.getElementById('headerNav');
 
 // event handlers
 
@@ -39,10 +26,7 @@ $(document).ready(function() {
     // Your code here
     mostrarProdutos(3);
 });
-const catalogImagePath = '/src/user/img/products/';
 
-btnToggleTheme.addEventListener('click', toggleTheme);
-// btnToggleTheme.on('click', toggleTheme);
 
 function mostrarProdutos(qtd) {
     prodCards.innerHTML = '';
@@ -66,94 +50,6 @@ function mostrarProdutos(qtd) {
 
 // behavior
 
-function modalExibir(id) {
-    var product = catalog.ProductById(id);
-    modalTitle.innerText = product.titulo;
-
-    var html  = `
-        <div class="modal-test d-flex gap-3">
-            <img src="${catalogImagePath}${product.img}" class="w-50 align-self-start" alt="...">
-            <div class="modal-test-info d-flex flex-column">`;
-    
-    product.descricao.forEach(x => { 
-        html += `<p class="text-align-justify">${x}</p>`;
-    });
-
-    html + `<p>R$ ${product.preco}</p>
-            </div>
-        </div>`;
-
-    modalBody.innerHTML = html;
-}
-
-function toggleTheme(){
-    if(body.getAttribute('data-bs-theme') == 'dark'){
-        body.setAttribute('data-bs-theme','light');
-        btnToggleTheme.innerHTML='<i class="fa fa-moon"></i>  Modo escuro';
-        imgLogo.src = 'src/img/logo/logoDark.svg';
-        headerNav.classList.toggle('navbar-light','navbar-dark');
-        headerNav.style.color = 'black';
-    }else{
-        body.setAttribute('data-bs-theme','dark');
-        btnToggleTheme.innerHTML='<i class="fa fa-sun"></i>  Modo claro';
-        imgLogo.src = 'src/img/logo/logoWhite.svg';
-        headerNav.classList.toggle('navbar-dark','navbar-light');
-        headerNav.style.color = 'black';
-    }
-}
-
-function refreshCartItems() {
-    cartItems.innerHTML = '';
-    shoppingCart.items.forEach(item => {
-        var product = catalog.ProductById(item.productId);
-        cartItems.innerHTML += `
-<div class="cartItem w-100 d-flex justify-content-start p-2 bg-azul rounded gap-2">
-    <img class="rounded" src="${catalogImagePath}${product.img}" width="55" height="55">
-    <div class="cardInfo w-100 d-flex flex-column">
-        <p class="m-0 align-self-end">${product.titulo}</p>
-        <div class="w-100 d-flex justify-content-between align-items-center">
-            <h5 class="m-0">${product.preco}</h5>
-            <div class="d-flex align-items-center">
-                <i class="cHand m-1 fa fa-minus text-danger" onclick="decrease(${product.id});"></i>
-                <div class="cArrow m-1">${item.qtd}</div>
-                <i class="cHand m-1 fa fa-plus text-success" onclick="increase(${product.id});"></i>
-            </div>
-            <i class="cHand fa fa-trash me-2" onclick="remove(${product.id});"></i>
-        </div>
-    </div>
-</div>`;
-    });
-    cartValue.innerText = shoppingCart.total();
-}
-
-function adicionar(id) {
-    shoppingCart.add(new ShoppingCartItem(id, 1));
-    refreshCartItems();
-    
-    var prod = catalog.ProductById(id);
-    alert(`${prod.titulo} adicionado ao carrinho.`);
-}
-
-function increase(id) {
-    shoppingCart.increase(id);
-    refreshCartItems();
-}
-
-function decrease(id) {
-    shoppingCart.decrease(id);
-    refreshCartItems();
-}
-
-function remove(id) {
-    var item = shoppingCart.items.filter(x => x.productId === id)[0];
-    var prod = catalog.ProductById(id);
-    
-    var ok = confirm(`Remover ${prod.titulo} - qtd : ${item.qtd} ?`);
-    if (ok) {
-        shoppingCart.remove(item);
-        refreshCartItems();
-    }
-}
 
 
 

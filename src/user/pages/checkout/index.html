@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/src/user/css/font-awesome/all.min.css">
     <!-- css local -->
     <link rel="stylesheet" href="/src/user/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <!-- css fim -->
     <link rel="shortcut icon" href="/src/user/img/logo/logoWhite.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,71 +43,154 @@
     </header>
 
     <main class="container-fluid p-0 m-0">
-        <section id="produtos" class="produtos c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
-            <h4>CHECKOUT</h4>
+
+        <!-- https://bbbootstrap.com/snippets/bootstrap-5-payment-form-payment-methods-83265795 -->
+         
+        <!-- <section id="produtos" class="produtos c-laranja container-fluid d-flex flex-column justify-content-center align-items-center">
             <div id="prodCards" class="prodCards d-flex flex-wrap justify-content-center align-items-start gap-2"  ></div>
-        </section>
+        </section> -->
+
+        <div class="row px-md-4 px-2 pt-4">
+            <h4>CHECKOUT</h4>
+            <div class="col-lg-8">
+                <p class="pb-2 fw-bold">Seu pedido</p>
+                <div class="card">
+                    <div class="ribbon ribbon-top-right"><span>Obrigado!</span></div>
+                    <div>
+                        <div class="table-responsive px-md-4 px-2 pt-3">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr class="border-bottom">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div> <img class="pic" src="https://images.pexels.com/photos/7322083/pexels-photo-7322083.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt=""> </div>
+                                                <div class="ps-3 d-flex flex-column justify-content">
+                                                    <p class="fw-bold">Air<span class="ps-1">Red</span><span class="ps-1">Pants</span></p> <small class=" d-flex"> <span class=" text-muted">Color:</span> <span class=" fw-bold">Red/White</span> </small> <small class=""> <span class=" text-muted">Size:</span> <span class=" fw-bold">L</span> </small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <p class="pe-3"><span class="red">$45.00</span></p>
+                                                <p class="text-muted text-decoration-line-through">$55.00</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center"> <span class="pe-3 text-muted">Quantity</span> <span class="pe-3"> <input class="ps-2" type="number" value="2"></span>
+                                                <div class="round"> <span class=""> L </span> </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- sumário -->
+            <div class="col-lg-4 payment-summary">
+                <p class="fw-bold pt-lg-0 pt-4 pb-2">Sumário</p>
+                <div class="card px-md-3 px-2 pt-4">
+                    <div class="unregistered mb-4"> <span class="py-1">Conta [sem registro]</span> </div>
+                    <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Código da transação</small>
+                        <p class="">VC115665</p>
+                    </div>
+                    <div class="d-flex justify-content-between b-bottom"> <input type="text" class="ps-2" placeholder="CUPOM">
+                        <div class="btn btn-primary">Apply</div>
+                    </div>
+                    <div class="d-flex flex-column b-bottom">
+                        <div class="d-flex justify-content-between py-3"> <small class="text-muted">Total do pedido</small>
+                            <p id="sumOrderTotal">$122</p>
+                        </div>
+                        <div class="d-flex justify-content-between pb-3"> <small class="text-muted">Serviços adicionais</small>
+                            <p id="sumOtherServices">$22</p>
+                        </div>
+                        <div class="d-flex justify-content-between"> <small class="text-muted">Valor total</small>
+                            <p>$132</p>
+                        </div>
+                    </div>
+                    <div class="sale my-3"><span class="px-1">compra expira em :</span><span class="red">21<span class="ps-1">hours</span>,31<span class="ps-1 ">minutes</span></span> </div>
+                </div>
+            </div>
+    
+            <!-- entrega -->
+            <div class="col-lg-8 delivery px-md-3 px-1">
+                <p class="pt-4 fw-bold pb-3 ps-2">Entrega</p>
+                <div class="d-md-flex justify-content-around align-items-center pb-4">
+                    <div class="size d-flex ps-4"> <label class="option d-flex align-items-center"> <input type="radio" name="radio">
+                            <div class="card">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center"> <img class="del" src="https://www.freepnglogos.com/uploads/ups-logo-transparent/ups-airlines-aviation-22.png" alt="">
+                                        <p class="ps-2">DPD</p>
+                                    </div>
+                                    <div class=" d-flex flex-column px-3">
+                                        <p class="fw-bold pb-1">DPD<span>Deliveries</span></p> <small class="text-muted pb-1">Expected<span class="ps-1">delivery:</span></small> <small class="text-muted pb-1">Friday:28</small>
+                                    </div>
+                                    <p class="fw-bold">$5.25</p>
+                                </div>
+                            </div> <span class="checkmark"></span>
+                        </label> </div>
+                    <div class="size d-flex pt-md-0 pt-3 ps-md-0 ps-4"> <label class="option d-flex align-items-center"> <input type="radio" name="radio">
+                            <div class="card">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center justify-content-center"> <img class="del" src="https://www.freepnglogos.com/uploads/ups-logo-transparent/ups-airlines-aviation-22.png" alt="">
+                                        <p class="ps-2">DPD</p>
+                                    </div>
+                                    <div class=" d-flex flex-column px-3">
+                                        <p class="fw-bold pb-1">DPD<span>Deliveries</span></p> <small class="text-muted pb-1">Expected<span class="ps-1">delivery:</span></small> <small class="text-muted pb-1">Friday:28</small>
+                                    </div>
+                                    <p class="fw-bold">$5.25</p>
+                                </div>
+                            </div> <span class="checkmark"></span>
+                        </label> </div>
+                </div>
+            </div>
+    
+            <!-- serviços adicionais -->
+            <div class="col-lg-4">
+                <p class="pt-4 fw-bold pb-3">Serviços adicionas</p>
+                <div class="card p-3 mb-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fw-bold">Care + package</p> <small class="text-muted">Garantia de um ano</small>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="pe-3">$10.00</p>
+                            <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="SwitchCheck"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 mb-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fw-bold">Environment Friendly</p> <small class="text-muted">Add some tip for earth care</small>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="pe-3">$2.00</p>
+                            <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="SwitchCheck"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 mb-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <p class="fw-bold">Guarda extendida</p> <small class="text-muted">30 dias a mais para o retorno</small>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="pe-3">$5.00</p>
+                            <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="SwitchCheck"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
     
     <footer class="container-fluid d-flex justify-content-around mt-2">
         <p class="copyright">Todos os direitos reservados a <span class="author">@PawShop</span> - 2023</p>
     </footer>
-
-
-    <!-- offcanvas -->
-    <!-- offcanvas carrinho -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offCarrinho" aria-labelledby="offCarrinho">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Carrinho</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column">
-            <div id="cartItems" class="d-flex flex-column gap-2"></div> 
-            <div class="cartTotal d-flex justify-content-between">
-                <p>Total</p>
-                <p id="cartValue">0</p>
-            </div> 
-            <a href="/src/user/pages/checkout/" class="m-3 btn btn-block rounded bg-azul align-self-center" >COMPRAR</a>
-        </div>
-        <div class="offcanvas-footer">
-        </div>
-    </div>
-    <!-- offcanvas user -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offUser" aria-labelledby="offUser">
-        <div class="offcanvas-header">
-            <h5 id="offUserTitle" class="offcanvas-title">User</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column justify-content-between h-100">
-            <!--  -->
-            <div class="align-bottom">
-                <h6 class="c-cinza">Settings</h6>
-                <a href="#" id="btnToggleTheme"><i class="fa fa-moon"></i>  Modo escuro</a>  
-            </div>
-            <div class="align-self-baseline">
-                <h6 class="c-cinza">Actions</h6>
-                <a href="/src/user/pages/login/">Login</a>
-            </div>
-        </div>
-        <div class="offcanvas-footer">
-        </div>
-    </div>
-
-    <!-- modal -->
-    <div id="modalProduto" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 id="modalTitle" class="modal-title fs-5">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="modalBody" class="modal-body"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 <!-- js bootrap -->
 <script src="/src/user/js/bootstrap.bundle.js"></script>

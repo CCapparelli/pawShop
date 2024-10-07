@@ -1,9 +1,6 @@
-/* body {
+body {
     height: 100vh;
-} */
-/* main {
-    height: 100vh;
-} */
+}
 
 .divLeft img {
     width: 100%;
@@ -14,10 +11,4 @@
 
 h4 {
     padding: 10px;
-}
-
-input {
-    border: none;
-    outline: none;
-    border-bottom: 1px solid black;
 }

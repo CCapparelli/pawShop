@@ -28,3 +28,56 @@ function mostrarCatalogo() {
         `;
     });
 }
+
+function adicionar(id) {
+    shoppingCart.add(new ShoppingCartItem(id, 1));
+    refreshCartItems();
+    
+    var prod = catalog.ProductById(id);
+    alert(`${prod.titulo} adicionado ao carrinho.`);
+}
+
+function increase(id) {
+    shoppingCart.increase(id);
+    refreshCartItems();
+}
+
+function decrease(id) {
+    shoppingCart.decrease(id);
+    refreshCartItems();
+}
+
+function remove(id) {
+    var item = shoppingCart.items.filter(x => x.productId === id)[0];
+    var prod = catalog.ProductById(id);
+    
+    var ok = confirm(`Remover ${prod.titulo} - qtd : ${item.qtd} ?`);
+    if (ok) {
+        shoppingCart.remove(item);
+        refreshCartItems();
+    }
+}
+
+function refreshCartItems() {
+    cartItems.innerHTML = '';
+    shoppingCart.items.forEach(item => {
+        var product = catalog.ProductById(item.productId);
+        cartItems.innerHTML += `
+<div class="cartItem w-100 d-flex justify-content-start p-2 bg-azul rounded gap-2">
+    <img class="rounded" src="${catalogImagePath}${product.img}" width="55" height="55">
+    <div class="cardInfo w-100 d-flex flex-column">
+        <p class="m-0 align-self-end">${product.titulo}</p>
+        <div class="w-100 d-flex justify-content-between align-items-center">
+            <h5 class="m-0">${product.preco}</h5>
+            <div class="d-flex align-items-center">
+                <i class="cHand m-1 fa fa-minus text-danger" onclick="decrease(${product.id});"></i>
+                <div class="cArrow m-1">${item.qtd}</div>
+                <i class="cHand m-1 fa fa-plus text-success" onclick="increase(${product.id});"></i>
+            </div>
+            <i class="cHand fa fa-trash me-2" onclick="remove(${product.id});"></i>
+        </div>
+    </div>
+</div>`;
+    });
+    cartValue.innerText = shoppingCart.total();
+}
