@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- css bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/src/user/css/bootstrap.css">
+    <!-- css font awesome -->
+    <!-- https://fontawesome.com/v6/icons -->
+    <link rel="stylesheet" href="/src/user/css/font-awesome/all.min.css">
+    <!-- css local -->
+    <link rel="stylesheet" href="/src/user/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- css fim -->
+    <link rel="shortcut icon" href="/src/user/img/logo/logoWhite.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Shop</title>
+</head>
+
+<body data-bs-theme="light" class="d-flex flex-column justify-content-between">
+    <div style="height:56px;"></div>
+    <header class="container-fluid">
+        <nav id="headerNav" class="navbar navbar-expand-lg navbar-light fixed-top bg-azul">
+            <div class="container-fluid">
+                <img id="imgLogo" src="/src/user/img/logo/logoDark.svg" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="/#adocao">Adoção</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="/src/user/pages/loja/">Loja</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="/">Contatos</a></li>
+                    </ul>
+                    <!-- #btnToggleTheme -->
+                    <div>
+                        <button id="btnNavCarrinho" class="btn" type="btn"><i class="fa-solid fa-cart-shopping"
+                                data-bs-toggle="offcanvas" data-bs-target="#offCarrinho"
+                                aria-controls="offCarrinho"></i></button>
+                        <button id="btnUser" class="btn" type="btn"><i class="fa fa-user" data-bs-toggle="offcanvas"
+                                data-bs-target="#offUser" aria-controls="#offUser"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mx-0 px-0 container-fluid d-flex flex-column align-items-center">
+        <h4>BLOG</h4>
+        <section class="topics container d-flex gap-5 mt-0 mb-5">
+            <div class="topic d-flex flex-column justify-content-center align-items-center" id="topic1">
+                <div class="topicImage"><img src="img/ImagensGeral/foto5.JPG" alt="topCard1"></div>
+                <h3>DICAS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus voluptas accusantium. </p>
+                <div><a class="button" href="#">VER MAIS</a></div>
+            </div>
+            <div class="topic d-flex flex-column justify-content-center align-items-center" id="topCard2">
+                <img class="topCardImage" src="img/ImagensGeral/foto5.JPG" alt="topCard2">
+                <h3 class="topCardTitle">NOTÍCIAS</h3>
+                <p class="topCardDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus voluptas accusantium. </p>
+                <div><a class="button" href="#">VER MAIS</a></div>
+            </div>
+            <div class="topic d-flex flex-column justify-content-center align-items-center" id="topCard3">
+                <img class="topCardImage" src="img/ImagensGeral/foto5.JPG" alt="topCard3">
+                <h3 class="topCardTitle">EQUIPAMENTOS</h3>
+                <p class="topCardDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus voluptas recusandae. </p>
+                <div><a class="button" href="#">VER MAIS</a></div>
+            </div>
+        </section>
+
+        <section class="events container-fluid d-flex flex-column gap-2">
+            <section class="eventsHeader d-flex flex-column justify-content-center align-items-center">
+                <h3>AGENDA</h3>
+                <h5>Lorem ipsum dolor sit ame</h5>
+                <div class="eventsForm">
+                    <select name="select1" id="select1"></select>
+                    <select name="select2" id="select2"></select>
+                </div>
+            </section>
+            <section class="eventCards d-flex gap-5 px-5">
+                <div class="eventCard d-flex" id="eventCard1">
+                    <div class="eventDate">
+                        <div class="eventMonth">MAR</div>
+                        <div class="eventDay">25</div>
+                    </div>
+                    <div class="eventContent">
+                        <h3 class="eventTitle">EVENTO 1</h3>
+                        <p class="eventDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus voluptas recusandae. </p>
+                        <div><a class="button" href="#">VER MAIS</a></div>
+                    </div>
+                </div>
+                <div class="eventCard" id="eventCard2">
+                    <div class="eventDate">
+                        <div class="eventMonth">MAR</div>
+                        <div class="eventDay">25</div>
+                    </div>
+                    <div class="eventContent">
+                        <h3 class="eventTitle">EVENTO 2</h3>
+                        <p class="eventDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus voluptas recusandae. </p>
+                        <div><a class="button" href="#">VER MAIS</a></div>
+                    </div>
+                </div>
+                <div class="eventCard" id="eventCard3">
+                    <div class="eventDate">
+                        <div class="eventMonth">MAR</div>
+                        <div class="eventDay">25</div>
+                    </div>
+                    <div class="eventContent">
+                        <h3 class="eventTitle">EVENTO 3</h3>
+                        <p class="eventDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae necessitatibus voluptas recusandae. </p>
+                        <div><a class="button" href="#">VER MAIS</a></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="galery d-flex flex-column justify-content-center align-items-center">
+            <h3>GALERIA</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nam voluptatem id asperiores rerum pariatur velit qui nihil in, a architecto dolore quas ipsa quasi!</p>
+
+            <div class="galeryImages d-flex flex-wrap justify-content-center gap-2">
+                <div class="galeryImage"><img src="img/ImagensGeral/foto5.jpg" alt="img1"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/foto6.jpg" alt="img2"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/foto7.jpg" alt="img3"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/foto8.jpg" alt="img4"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/foto9.jpg" alt="img5"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/foto93-bike-1.jpg" alt="img6"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/images.jpg" alt="img7"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/img-20111218-00664.jpg" alt="img8"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/Mapa.PNG" alt="img9"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/maxresdefault.jpg" alt="img10"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/noticias.png" alt="img11"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/omafiets.jpg" alt="img12"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/RTEmagicC_ciclovia_01.jpg.jpg" alt="img13"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/Rádio-bike-imagem-600x338.jpg" alt="img14"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/salvador.jpg" alt="img15"></div>
+                <div class="galeryImage"><img src="img/ImagensGeral/STR700.jpg" alt="img16"></div>
+            </div>
+        </section>
+
+        <section class="newsletter container-fluid d-flex flex-column gap-2 justify-content-center align-items-center">
+            <h3>NEWSLETTER</h3>
+            <p class="mb-0" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nam voluptatem id asperiores rerum pariatur velit qui nihil in, a architecto dolore quas ipsa quasi!</p>
+            <div class="w-50 newsletterForm d-flex flex-column justify-content-center align-items-center">
+                <input class="mt-0" type="email" name="" id="" placeholder="e-mail">
+                <div><a class="button btnNewsletter" href="#">CADASTRAR</a></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="container-fluid d-flex justify-content-around mt-2">
+        <p class="copyright">Todos os direitos reservados a <span class="author">@PawShop</span> - 2023</p>
+    </footer>
+
+
+    <!-- offcanvas -->
+    <!-- offcanvas carrinho -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offCarrinho" aria-labelledby="offCarrinho">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cartItems" class="d-flex flex-column gap-2"></div>
+            <div class="cartTotal d-flex justify-content-between">
+                <p>Total</p>
+                <p id="cartValue">0</p>
+            </div>
+            <a href="/src/user/pages/checkout/" class="m-3 btn btn-block rounded bg-azul align-self-center">COMPRAR</a>
+        </div>
+        <div class="offcanvas-footer">
+        </div>
+    </div>
+    <!-- offcanvas user -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offUser" aria-labelledby="offUser">
+        <div class="offcanvas-header">
+            <h5 id="offUserTitle" class="offcanvas-title">User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between h-100">
+            <!--  -->
+            <div class="align-bottom">
+                <h6 class="c-cinza">Settings</h6>
+                <a href="#" id="btnToggleTheme"><i class="fa fa-moon"></i> Modo escuro</a>
+            </div>
+            <div class="align-self-baseline">
+                <h6 class="c-cinza">Actions</h6>
+                <a href="/src/user/pages/login/">Login</a>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+        </div>
+    </div>
+</body>
+<!-- js bootrap -->
+<script src="/src/user/js/bootstrap.bundle.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+<!-- js jQuery -->
+<script src="/src/user/js/jquery-3.7.1.min.js"></script>
+<!-- js local -->
+<script src="/src/sevices/data/objectModel.js"></script>
+<script src="/src/sevices/settings.js"></script>
+<script src="/src/sevices/gateway/user.js"></script>
+<script src="js/index.js"></script>
+
+</html>

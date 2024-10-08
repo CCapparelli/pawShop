@@ -1,0 +1,179 @@
+:root {
+    --color0: white;
+    --color1: black;
+    --color2: gray;
+    --color3: silver;
+    --font1: Arial, Helvetica;
+    --spaceIn: 10px;
+    --spaceOut: 30px;
+    --textSize: 10pt; 
+    --btnTextSize: 8pt; 
+}
+
+select {
+    width: 200px;
+    height: 25px;
+    background-color: var(--color3);
+    margin: var(--spaceIn);
+}
+input {
+    width: 95%;
+    height: 25px;
+    margin-bottom: 20px;
+}
+p, h3 {
+    color: var(--color1);
+    line-height: 1.4rem;   
+    font-size: 10pt;
+}
+h3 {
+    padding-top: var(--spaceIn); 
+}
+
+a {
+    text-decoration: none;
+    color: var(--color1);
+    align-items: center;
+}
+
+/* classes */
+
+.button {
+    padding: var(--spaceIn) var(--spaceOut);
+    font-size: var(--btnTextSize);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* topics */
+
+.topics, .eventCards {
+    width: 100%;
+    padding: var(--spaceIn) 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.topic {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spaceIn);
+}
+.topic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    
+}
+
+/* events (agenda) */
+
+.events, .newsletter {
+    color: var(--color2);
+    background-color: var(--color3);
+}
+.eventContent {
+    margin: 0 5px;
+    color: var(--color2);
+}
+.eventContent h3 {
+    padding-top: 0;
+}
+.eventContent p {
+    padding-bottom: var(--spaceIn);
+}
+.eventCards {
+    padding: var(--spaceIn) var(--spaceIn) var(--spaceOut);
+}
+.eventCard {
+    display: flex;
+    flex-direction: row;
+}
+.eventDate {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--color1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.eventMonth {
+    font-size: 8pt;
+}
+.eventDay {
+    font-size: 14pt;
+}
+.eventCardContent {
+    align-items: center;
+}
+
+/* galery */ 
+
+.topics, .galery, .newsletter, .eventsHeader {
+    margin-top: var(--spaceOut);
+    text-align: center;
+}
+
+.galeryImage, .galeryImage img {
+    width: 200px;
+    height: 200px;
+    border: .5px solid var(--color1);
+    border-radius: 10px;
+    background-image: url(../img/ImagensGeral/Hotel_Icon_Near_Bike_Route.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* newsletter */
+.newsletter {
+    padding-top: var(--spaceIn);
+    padding-bottom: var(--spaceOut);
+}
+.newsletter h3 {
+    padding-top: var(--spaceOut);
+}
+.newsletter p {
+    padding-bottom: var(--spaceIn);
+}
+.btnNewsletter {
+    color: var(--color3);
+    background-color: var(--color1);
+}
+
+/* footer */
+.redes ul {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+}
+.redes ul li {
+    color: var(--color3);
+    font-size: 10pt;
+    display: flex;
+    align-items: center;
+    gap: var(--spaceIn);
+}
+.copyright {
+    color: var(--color4);
+    font-size: var(--btnTextSize);
+    padding: var(--spaceIn);
+}
+.redes ul img {
+    width: 32px;
+    height: 32px;
+    line-height: 32pt;
+}
+
+/**/
